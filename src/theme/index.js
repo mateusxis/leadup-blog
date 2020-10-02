@@ -1,11 +1,11 @@
 export default {
   colors: {
-    alert: '#DC0000',
-    background: '#FFFFFF',
-    primary: '#00DCB7',
-    secondary: '#00145F',
-    shadow: '#00000029',
-    support: '#707070',
+    alert: "#DC0000",
+    background: "#FFFFFF",
+    primary: "#00DCB7",
+    secondary: "#00145F",
+    shadow: "#00000029",
+    support: "#707070",
   },
   typography: {
     h1: {
@@ -70,6 +70,6 @@ export default {
       fontWeight: "normal",
       letterSpacing: "normal",
       lineHeight: 1,
-    }
+    },
   },
 };
