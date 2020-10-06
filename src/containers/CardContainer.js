@@ -7,7 +7,8 @@ import Card from "../components/Card";
 function CardContainer({ title, imageUrl, description, id }) {
   const dispatch = useDispatch();
   const onEditClick = (id) => dispatch(openModal({ type: "modalEdit", id }));
-  const onDeleteClick = (id) => dispatch(openModal({ type: "modalEdit", id }));
+  const onDeleteClick = (id) =>
+    dispatch(openModal({ type: "modalDelete", id }));
 
   return (
     <Card

@@ -5,16 +5,16 @@ import ModalBase from "../ModalBase";
 
 import { SWrapperSection, SWrapperButton } from "./styles";
 
-const ModalDelete = () => {
+const ModalDelete = ({ onDeleteClick, onCloseClick }) => {
   return (
     <ModalBase>
       <SWrapperSection>
         <Typography>Tem certeza de que deseja excluir?</Typography>
         <SWrapperButton>
-          <Button variant="outlined" color="primary">
+          <Button variant="outlined" color="primary" onClick={onDeleteClick}>
             Sim
           </Button>
-          <Button variant="outlined" color="default">
+          <Button variant="outlined" color="default" onClick={onCloseClick}>
             Não
           </Button>
         </SWrapperButton>

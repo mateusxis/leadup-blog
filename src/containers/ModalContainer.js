@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import ModalDelete from "../components/ModalDelete";
 import ModalEdit from "../components/ModalEdit";
 import ModalNotification from "../components/ModalNotification";
 import { closeModal, openModal, selectModal } from "../redux/modalSlice";
@@ -11,6 +12,27 @@ const ModalContainer = () => {
 
   const getModal = (modal) => {
     switch (modal) {
+      case "modalCreate":
+        return (
+          <ModalEdit
+            titleModal="CRIAR"
+            onCloseClick={() => dispatch(closeModal())}
+            onSaveClick={() => {
+              dispatch(closeModal());
+              dispatch(openModal({ type: "modalNotificationSave" }));
+            }}
+          />
+        );
+      case "modalDelete":
+        return (
+          <ModalDelete
+            onCloseClick={() => dispatch(closeModal())}
+            onDeleteClick={() => {
+              dispatch(closeModal());
+              dispatch(openModal({ type: "modalNotificationDelete" }));
+            }}
+          />
+        );
       case "modalEdit":
         return (
           <ModalEdit
@@ -22,17 +44,17 @@ const ModalContainer = () => {
             }}
           />
         );
-      case "modalNotificationEdit":
-        return (
-          <ModalNotification
-            message="ARTIGO ATUALIZADO"
-            onCloseClick={() => dispatch(closeModal())}
-          />
-        );
       case "modalNotificationDelete":
         return (
           <ModalNotification
             message="ARTIGO EXCLUIDO COM SUCESSO"
+            onCloseClick={() => dispatch(closeModal())}
+          />
+        );
+      case "modalNotificationEdit":
+        return (
+          <ModalNotification
+            message="ARTIGO ATUALIZADO"
             onCloseClick={() => dispatch(closeModal())}
           />
         );

@@ -6,7 +6,7 @@ import ModalBase from "../ModalBase";
 
 import { SCloseLink, SWrapperSection } from "./styles";
 
-const ModalNotification = ({message, onCloseClick}) => {
+const ModalNotification = ({ message, onCloseClick }) => {
   return (
     <ModalBase>
       <SCloseLink onClick={onCloseClick}>
