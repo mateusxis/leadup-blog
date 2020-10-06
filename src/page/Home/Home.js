@@ -4,6 +4,7 @@ import { Button, Container, Typography } from "@material-ui/core";
 
 import { ReactComponent as PlusIcon } from "../../assets/icons/plus-circle.svg";
 import ListCard from "../../containers/ListCardsContainer";
+import Modal from "../../containers/ModalContainer";
 import Store from "../../containers/StoreContainer";
 import Header from "../../components/Header";
 import { isAuthenticated, logout } from "../../services/auth";
@@ -31,6 +32,7 @@ const Home = () => {
       </STitleWrapper>
       <ListCard />
       <Store />
+      <Modal />
     </Container>
   );
 };

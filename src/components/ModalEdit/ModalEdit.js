@@ -8,20 +8,27 @@ import TextField from "../TextField";
 
 import { SCloseLink, SWrapperSection } from "./styles";
 
-const ModalEdit = () => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+const ModalEdit = ({
+  titleModal,
+  titleArticle,
+  descriptionArticle,
+  onSaveClick,
+  onCloseClick,
+  onImageClick,
+}) => {
+  const [title, setTitle] = useState(titleArticle || "");
+  const [description, setDescription] = useState(descriptionArticle || "");
 
   const handleOnChange = (field, setField) => {
     setField(field);
   };
   return (
     <ModalBase>
-      <SCloseLink>
+      <SCloseLink onClick={onCloseClick}>
         <CloseIcon />
       </SCloseLink>
       <SWrapperSection>
-        <Typography>EDITAR</Typography>
+        <Typography>{titleModal}</Typography>
         <TextField
           label="Titulo"
           value={title}
@@ -36,10 +43,15 @@ const ModalEdit = () => {
             handleOnChange(event.target.value, setDescription)
           }
         />
-        <Button variant="outlined" startIcon={<SendIcon />} color="secondary">
+        <Button
+          variant="outlined"
+          startIcon={<SendIcon />}
+          color="secondary"
+          onClick={onImageClick}
+        >
           IMAGEM
         </Button>
-        <Button variant="outlined" color="primary">
+        <Button variant="outlined" color="primary" onClick={onSaveClick}>
           Salvar
         </Button>
       </SWrapperSection>

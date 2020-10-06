@@ -6,14 +6,14 @@ import ModalBase from "../ModalBase";
 
 import { SCloseLink, SWrapperSection } from "./styles";
 
-const ModalNotification = () => {
+const ModalNotification = ({message, onCloseClick}) => {
   return (
     <ModalBase>
-      <SCloseLink>
+      <SCloseLink onClick={onCloseClick}>
         <CloseIcon />
       </SCloseLink>
       <SWrapperSection>
-        <Typography>ARTIGO EXCLUIDO COM SUCESSO</Typography>
+        <Typography>{message}</Typography>
       </SWrapperSection>
     </ModalBase>
   );
