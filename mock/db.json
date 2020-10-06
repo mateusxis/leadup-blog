@@ -1,0 +1,34 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "title": "Lorem ipsum dolor sit amet,",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor",
+      "imageUrl": "https://cdn.pixabay.com/photo/2020/10/02/17/50/rocket-5621760_960_720.png"
+    },
+    {
+      "id": 2,
+      "title": "Amet, consetetur sadipscing",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor",
+      "imageUrl": "https://cdn.pixabay.com/photo/2020/10/04/04/14/television-5625135_960_720.png"
+    },
+    {
+      "id": 3,
+      "title": "Dolor sit amet, consetetur",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor",
+      "imageUrl": "https://cdn.pixabay.com/photo/2020/09/24/17/56/ship-5599368_960_720.png"
+    },
+    {
+      "id": 4,
+      "title": "Sadipscing elitr, sed diam",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor",
+      "imageUrl": "https://cdn.pixabay.com/photo/2020/09/30/20/41/peace-sign-5617022_960_720.png"
+    },
+    {
+      "id": 5,
+      "title": "Nonumy eirmod tempor",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor",
+      "imageUrl": "https://cdn.pixabay.com/photo/2020/07/14/19/47/armillary-sphere-5405533_960_720.png"
+    }
+  ]
+}
