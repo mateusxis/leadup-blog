@@ -1,24 +1,45 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import ModalArticle from "../components/ModalArticle";
 import ModalDelete from "../components/ModalDelete";
 import ModalEdit from "../components/ModalEdit";
 import ModalNotification from "../components/ModalNotification";
+import { insertNewCurrent } from "../redux/articleSlice";
 import { closeModal, openModal, selectModal } from "../redux/modalSlice";
+import { selectNewsCurrent } from "../redux/articleSlice";
 
 const ModalContainer = () => {
   const dispatch = useDispatch();
   const modal = useSelector(selectModal);
+  const newsCurrent = useSelector(selectNewsCurrent);
 
   const getModal = (modal) => {
     switch (modal) {
+      case "modalArticle":
+        return (
+          <ModalArticle
+            onCloseClick={() => dispatch(closeModal())}
+            id={newsCurrent.id}
+            title={newsCurrent.title}
+            imageUrl={newsCurrent.imageUrl}
+            description={newsCurrent.description}
+            onEditClick={(id) => {
+              dispatch(insertNewCurrent({ id }));
+              dispatch(openModal({ type: "modalEdit", id }));
+            }}
+            onDeleteClick={(id) => {
+              dispatch(insertNewCurrent({ id }));
+              dispatch(openModal({ type: "modalDelete", id }));
+            }}
+          />
+        );
       case "modalCreate":
         return (
           <ModalEdit
             titleModal="CRIAR"
             onCloseClick={() => dispatch(closeModal())}
             onSaveClick={() => {
-              dispatch(closeModal());
               dispatch(openModal({ type: "modalNotificationSave" }));
             }}
           />
@@ -28,7 +49,6 @@ const ModalContainer = () => {
           <ModalDelete
             onCloseClick={() => dispatch(closeModal())}
             onDeleteClick={() => {
-              dispatch(closeModal());
               dispatch(openModal({ type: "modalNotificationDelete" }));
             }}
           />
@@ -37,9 +57,11 @@ const ModalContainer = () => {
         return (
           <ModalEdit
             titleModal="EDITAR"
+            id={newsCurrent.id}
+            titleArticle={newsCurrent.title}
+            descriptionArticle={newsCurrent.description}
             onCloseClick={() => dispatch(closeModal())}
             onSaveClick={() => {
-              dispatch(closeModal());
               dispatch(openModal({ type: "modalNotificationEdit" }));
             }}
           />

@@ -16,8 +16,8 @@ const ModalEdit = ({
   onCloseClick,
   onImageClick,
 }) => {
-  const [title, setTitle] = useState(titleArticle || "");
-  const [description, setDescription] = useState(descriptionArticle || "");
+  const [title, setTitle] = useState(titleArticle);
+  const [description, setDescription] = useState(descriptionArticle);
 
   const handleOnChange = (field, setField) => {
     setField(field);

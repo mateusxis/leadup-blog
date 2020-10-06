@@ -14,39 +14,39 @@ import {
   SWrapperButton,
 } from "./styles";
 
-const ModalArticle = () => {
+const ModalArticle = ({
+  id,
+  imageUrl,
+  title,
+  description,
+  onEditClick,
+  onDeleteClick,
+  onCloseClick,
+}) => {
   return (
     <ModalBase>
-      <SCloseLink>
+      <SCloseLink onClick={onCloseClick}>
         <CloseIcon />
       </SCloseLink>
       <SWrapperSection>
-        <Image
-          width="354px"
-          height="354px"
-          src="https://thumbs.jusbr.com/imgs.jusbr.com/publications/artigos/images/capturar1452194585.JPG"
-        />
+        <Image width="354px" height="354px" src={imageUrl} />
         <SWrapperArticle>
-          <Typography>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy
-          </Typography>
-          <Typography>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor
-          </Typography>
+          <Typography>{title}</Typography>
+          <Typography>{description}</Typography>
           <SWrapperButton>
-            <Button variant="outlined" startIcon={<EditIcon />} color="primary">
+            <Button
+              variant="outlined"
+              startIcon={<EditIcon />}
+              color="primary"
+              onClick={() => onEditClick(id)}
+            >
               Editar
             </Button>
             <Button
               variant="outlined"
               startIcon={<DeleteIcon />}
               color="default"
+              onClick={() => onDeleteClick(id)}
             >
               Excluir
             </Button>

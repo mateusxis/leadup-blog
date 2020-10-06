@@ -14,6 +14,12 @@ export const articleSlice = createSlice({
       if (!includesNew(news, action.payload)) news.push(action.payload);
       state.news = news;
     },
+    insertNewCurrent: (state, action) => {
+      const { id } = action.payload;
+      const newsCurrent = state.news.filter((newObj) => newObj.id === id)[0];
+
+      state.newsCurrent = newsCurrent;
+    },
     deleteNew: (state, action) => {
       const news = state.news;
       const { id } = action.payload;
@@ -31,8 +37,14 @@ export const articleSlice = createSlice({
   },
 });
 
-export const { insertNew, deleteNew, onChange } = articleSlice.actions;
+export const {
+  insertNew,
+  insertNewCurrent,
+  deleteNew,
+  onChange,
+} = articleSlice.actions;
 
 export const selectNews = (state) => state.article.news;
+export const selectNewsCurrent = (state) => state.article.newsCurrent;
 
 export default articleSlice.reducer;

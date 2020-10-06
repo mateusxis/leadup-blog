@@ -1,1 +1,1 @@
-export {default} from './TitleHome'
+export { default } from "./TitleHome";
