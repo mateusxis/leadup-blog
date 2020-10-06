@@ -6,8 +6,8 @@ import TitleHome from "../components/TitleHome";
 
 function TitleHomeContainer() {
   const dispatch = useDispatch();
-  const onCreateClick = (id) =>
-    dispatch(openModal({ type: "modalCreate", id }));
+  const onCreateClick = () =>
+    dispatch(openModal({ type: "modalCreate" }));
 
   return <TitleHome onCreateClick={() => dispatch(onCreateClick)} />;
 }
